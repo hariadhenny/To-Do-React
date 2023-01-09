@@ -1,0 +1,14 @@
+
+.listaDeItem, label{
+background-color: red;
+padding-left: 30px;
+font-size: 30px;
+margin-top: 15px;
+}
+
+.listaDeItem button{
+    background-color: black;
+    color: chartreuse;
+    margin-left: 500px;
+    font-size: 30px;
+}

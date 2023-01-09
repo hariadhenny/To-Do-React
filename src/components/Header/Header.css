@@ -1,0 +1,14 @@
+
+.header{
+    font-size: 40px ;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+    padding: 9px;
+}
+
+div{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
