@@ -1,12 +1,7 @@
 import "./List.css";
+import Input from "../Input/Input";
 
 function List(props) {
-  
-  function remover(index) {
-
-   
-  }
-
   return (
     <div className="listaDeTarefas">
       <ol>
@@ -15,7 +10,7 @@ function List(props) {
             <div className="listaDeItem" key={index}>
               <input type="checkbox"></input>
               <label>{item}</label>
-              <button onClick={() => remover(index)}>remover</button>
+              <button onClick={() => props.removerItem(index)}>remover</button>
             </div>
           );
         })}
