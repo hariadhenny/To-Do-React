@@ -1,14 +1,35 @@
-
-.listaDeItem, label{
-background-color: red;
-padding-left: 30px;
-font-size: 30px;
-margin-top: 15px;
+.listaDeItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.listaDeItem button{
-    background-color: black;
-    color: chartreuse;
-    margin-left: 500px;
-    font-size: 30px;
+.listaDeItem input{
+    min-width: 17px;
+    min-height: 17px;
+    margin-right: 5px;
+   
+}
+
+
+.listaDeItem, label{
+   background-color:rgb(17, 3, 107);
+   font-family: 'Segoe UI';
+   padding-bottom: 5px;
+   color: white;
+   padding-left: 30px;
+   padding-right: 60;
+   font-size: 20px;
+   margin-top: 15px;
+   border-radius: 7px;
+}
+
+.lixo{
+
+    background-color: rgba(0,0,0,0);
+    margin-right: 10px;
+    align-self: center;
+    margin-left: 50px;
+    font-size: 20px;
+    
 }

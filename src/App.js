@@ -10,6 +10,9 @@ function App() {
     <div>
      <Header/>
      <Input/>
+     <h3>
+      Desenvolvido por : Hariadhenny Vieira
+      </h3>
     </div>
   );
 }

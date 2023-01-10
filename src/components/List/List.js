@@ -1,5 +1,5 @@
 import "./List.css";
-import Input from "../Input/Input";
+import { FaTrashAlt } from "react-icons/fa";
 
 function List(props) {
   return (
@@ -10,7 +10,7 @@ function List(props) {
             <div className="listaDeItem" key={index}>
               <input type="checkbox"></input>
               <label>{item}</label>
-              <button onClick={() => props.removerItem(index)}>remover</button>
+              <FaTrashAlt className="lixo" onClick={() => props.removerItem(index)}>remover</FaTrashAlt>
             </div>
           );
         })}

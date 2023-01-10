@@ -15,6 +15,7 @@
     font-size: 25px;
     text-align: center;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 7px;
     
 }
 
@@ -22,7 +23,10 @@
     padding: 23px;
     font-size: 20px;
     text-align: center;
-    background-color: aquamarine;
+    color: white;
+    background-color: rgb(17, 3, 107);
     transform: translate(-3%, -3%);
+    border-radius: 7px;
+   
 }
 
