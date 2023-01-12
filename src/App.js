@@ -1,6 +1,8 @@
 import './App.css';
 import Header from './components/Header/Header';
 import Input from './components/Input/Input';
+import DesenvolvidoPor from './components/DesenvolvidoPor/DesenvolvidoPor'
+
 
 
 
@@ -10,9 +12,7 @@ function App() {
     <div>
      <Header/>
      <Input/>
-     <h3>
-      Desenvolvido por : Hariadhenny Vieira
-      </h3>
+     <DesenvolvidoPor/>
     </div>
   );
 }
