@@ -1,5 +1,5 @@
 import "./Input.css";
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import List from "../List/List";
 
 
@@ -28,7 +28,8 @@ function Input() {
 
   return (
     <>
-      <form className="campo" onSubmit={testePrevent}>
+    <div className="campo">
+      <form onSubmit={testePrevent}>
         <input
           onChange={(e) => setItem(e.target.value)}
           placeholder="Digite uma tarefa"
@@ -36,6 +37,7 @@ function Input() {
         />
         <button onClick={() => addItem(item)}>ok</button>
       </form>
+      </div>
       <List listaCompleta={itens} removerItem={removerItem} />
     </>
   );

@@ -1,6 +1,6 @@
-import Header from './Header.css'
+import './Header.css'
 
-function header(){
+function Header(){
     return(
         <div className='header'>
             <h1> To Do List </h1>
@@ -10,4 +10,4 @@ function header(){
 
 }
 
-export default header;
+export default Header;
