@@ -4,15 +4,35 @@
     justify-content: center;
     text-align: center;
     font-family:'Segoe UI';
-    font-size:5vw;
-    padding: 9px;
-    min-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    font-size:80%;
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: rgb(43, 43, 241);
+}
+
+
+.header h1{
+    background: none;
+    font-size: 4rem;
+    color:white;
+}
+
+
+
+@media(max-width:580px){
+       .header h1{
+        font-size: 3rem;
+
+       }
     
 }
 
-.header h1{
-    font-size: 1em;
-    color:white;
+
+@media(max-width:460px){
+    .header h1{
+     font-size: 2rem;
+
+    }
+ 
 }

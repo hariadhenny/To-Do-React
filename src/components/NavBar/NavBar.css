@@ -1,0 +1,23 @@
+
+
+.Usuario p{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+
+@media(max-width:550px){
+    .Usuario p{
+        font-size: 13px;
+    }
+}
+
+@media(max-width:350px){
+    .Usuario p{
+        font-size: 9px;
+    }
+}

@@ -3,24 +3,26 @@ import { FaTrashAlt } from "react-icons/fa";
 
 function List(props) {
   return (
-    <div>
+    <div className="container-pai">
       <ol>
         {props.listaCompleta.map((item, index) => {
           return (
-            <div className="listaDeItem" key={index}>
+            <div className="div-filho">
+            <div className="listaDeItem" key={item.id}>
               <input type="checkbox"></input>
-              <label >{item}</label>
+              <label>{item.tarefa}</label>
               <FaTrashAlt
                 className="lixo"
-                onClick={() => props.removerItem(index)}
+                onClick={() => props.removerItem(item.id)}
               >
-                remover
               </FaTrashAlt>
+            </div>
             </div>
           );
         })}
       </ol>
-    </div>
+      </div>
+   
   );
 }
 

@@ -1,103 +1,57 @@
+import "./Login.css";
 import { useState } from "react";
 import axios from "axios";
-import "./Login.css";
+import {useNavigate} from 'react-router-dom'
 
-function Login() {
-  const [nome, setNome] = useState();
-  const [email, setEmail] = useState();
-  const [senha, setSenha] = useState();
+function Login(){
 
-  const testePrevent = (a, b, c) => {
-    a.preventDefault();
-    setNome("");
-    b.preventDefault();
-    setEmail("");
-    c.preventDefault();
-    setSenha("");
-  };
+  const [Email, setEmail] = useState('')
+  const [Senha, setSenha] = useState('')
+  const navigate = useNavigate()
 
-  async function adicionarUsuario(nome, email, senha) {
-    var emailExiste = false;
+  const testePrevent= (e, s)=> {
+    e.preventDefault('')
+    setEmail("")
+    
+  }
 
-    await axios
-      .get("http://localhost:3001/usuarios?email=" + email)
-      .then(function (response) {
+
+  async function LogarUsuario(email, senha){
+    
+    await axios.get("http://localhost:3001/usuarios?email=" + email  + "&senha=" + senha) 
+      .then(function (response){
+        
         if (response.data.length > 0) {
-          emailExiste = true;
-          alert("Este email já existe");
+          
+          localStorage.setItem("nome",response.data[0].nome)
+          localStorage.setItem("email",response.data[0].email)
+          navigate('/Home')
+                    
         }
       })
       .catch(function (error) {
-        console.log("caiu no catch : " + error);
-      });
-
-    if (emailExiste == false) {
-      await axios
-        .post(
-          "http://localhost:3001/usuarios",
-          {
-            nome: nome,
-            email: email,
-            senha: senha,
-          },
-          {
-            headers: {
-              "content-type": "application/json",
-            },
-          }
-        )
-        .then((e) => {
-          alert("Cadastro realizado com sucesso");
-          setNome("");
-          setEmail("");
-          setSenha("");
-        })
-        .catch((erro) => {
-          console.log(erro + "   catch");
-        });
-    }
-  }
+       alert('usuario não tem cadastro')
+      })
+    };
+    
 
   return (
     <main>
       <div className="container">
-        <form onSubmit={testePrevent} className="item">
-          <h1> Faça seu cadastro </h1>
-          <label> Nome:</label>
-          <input
-            value={nome}
-            id="name"
-            type="text"
-            required
-            onChange={(a) => setNome(a.target.value)}
-          />
+        <form onSubmit={testePrevent} method="get" className="item">
+          <h1> Faça seu Login </h1>
+          <label> E-mail:</label>
+          <input type="email" required onChange={(e) => setEmail(e.target.value)}/>
           <br />
-          <label > E-mail:</label>
-          <input
-            value={email}
-            id="email"
-            type="email"
-            required
-            onChange={(b) => setEmail(b.target.value)}
-          />
+          <label> Senha: </label>
+          <input type="password" maxlength='16' required onChange={(s) => setSenha(s.target.value)}></input>
           <br />
-          <label > Senha: </label>
-          <input
-            maxlength='16'
-            value={senha}
-            id="senha"
-            type="password"
-            required
-            onChange={(c) => setSenha(c.target.value)}
-          />
-          <br />
-          <button
-            onClick={() => {
-              adicionarUsuario(nome, email, senha);
-            }}
-          >
-            Cadastrar
-          </button>
+          <button onClick={() => {LogarUsuario(Email, Senha)}}>Entrar</button>
+          <br/>
+          <br/>
+          <div>
+            <a href="http://localhost:3000/cadastro">Nao tem cadastro? cadastre-se </a>
+          </div>
         </form>
       </div>
     </main>
